@@ -1,0 +1,58 @@
+---
+title: "Hypoxia Classifier Tutorial"
+author: "Laura Puente-Santamaria"
+
+output: html_document
+---
+
+### Step 1: Load decision trees and gene expression matrix.
+```{r}
+load("Tree_colection.RData")
+load("GeneExpression_example.RData")
+
+head(gene_expression)
+```
+
+This gene expression matrix is the [salmon](https://salmon.readthedocs.io/en/latest/) output corresponding to [GSM2390150](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2390150), an RNA-seq of HUVEC cells grown in hypoxia for 8h.
+
+### Step 2: Ranking percentile.
+```{r}
+rank_percentile <- matrix( 100*rank( gene_expression ) / length( gene_expression ) )
+
+rownames( rank_percentile ) <- rownames( gene_expression )
+colnames( rank_percentile ) <- "Sample 1"
+
+head(rank_percentile)
+```
+We rank genes from the least to the most expressed, with 100 being the most expressed gene in the sample, and 0 the least.
+The trees generated with ``rpart`` take as input a data frame with a row for samples and columns for variables:
+
+```{r}
+rank_percentile <- data.frame( t( rank_percentile ) )
+
+rank_percentile[,1:5]
+
+```
+
+### Step 3: Classify the sample.
+
+```{r}
+
+decisionTree <- fullTreeCollection[[ 125 ]]
+
+prediction <- predict( decisionTree, rank_percentile )
+
+prediction
+```
+The resulting matrix, ``prediction``, has two columns with the probabilities of the sample to be normoxic (first column) or hypoxic (second column).
+
+
+
+
+
+
+
+
+
+
+
