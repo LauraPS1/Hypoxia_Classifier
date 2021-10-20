@@ -12,5 +12,5 @@ This repository contains supplementary data for the paper "Hypoxia classifier fo
 Each of the elements of the **Validation_datasets.RData** list contains a metadata table with information on each RNA-seq sample and a gene expression matrix. 
 Gene expression is quantified as a ranking percentile, with 100 being the most expressed gene in the sample, and 0 the least.
 
-* **GeneExpression_example.RData**: gene expression matrix (in peudocounts), output from [salmon](https://salmon.readthedocs.io/en/latest/) corresponding to [GSM2390150](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2390150), an RNA-seq of HUVEC cells grown in hypoxia for 8h.
+* **GeneExpression_example.RData**: gene expression matrix (in pseudocounts), output from [salmon](https://salmon.readthedocs.io/en/latest/) corresponding to [GSM2390150](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2390150), an RNA-seq of HUVEC cells grown in hypoxia for 8h.
 * **Tutorial.pdf**: Step by step guide to classify a gene expression profile using one of the decision trees.
