@@ -2,7 +2,7 @@
 
 This repository contains supplementary data for the paper "Hypoxia classifier for transcriptome datasets" ([10.1101/2021.11.15.468572](https://www.biorxiv.org/content/10.1101/2021.11.15.468572v1) ) 
 
-* **Tree_colection.RData** : Collection of 276 *rpart* decision trees.
+* **Tree_collection.RData** : Collection of 276 *rpart* decision trees.
 * **Validation_datasets.RData**: list of four validation datasets:
     *  "clearCellRenalCarcinoma": 90 paired samples of ccRCC and healthy adjacent tissue from TCGA-KIRK and GSE102101.
     *  "mouse": 34 paired samples of mouse cells grown in normoxic or hypoxic conditions
@@ -14,3 +14,4 @@ Gene expression is quantified as a ranking percentile, with 100 being the most e
 
 * **GeneExpression_example.RData**: gene expression matrix (in pseudocounts), output from [salmon](https://salmon.readthedocs.io/en/latest/) corresponding to [GSM2390150](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2390150), an RNA-seq of HUVEC cells grown in hypoxia for 8h.
 * **Tutorial.pdf**: Step by step guide to classify a gene expression profile using one of the decision trees.
+* **classification_TCGA.RDS**: classification of 8520 samples from TCGA. This object contains a list of 19 data frames, one for each tumor major primary site. In every data frame each row represents a sample, and columns contain "sample ID", "patient ID", and the class assigned by each of the 276 decision trees in the collection.
