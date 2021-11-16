@@ -1,6 +1,6 @@
 # Hypoxia Classifier
 
-This repository contains supplementary data for the paper "Hypoxia classifier for transcriptome datasets" (doi: XXXXXXXXXXX) 
+This repository contains supplementary data for the paper "Hypoxia classifier for transcriptome datasets" ([https://www.biorxiv.org/content/10.1101/2021.11.15.468572v1](10.1101/2021.11.15.468572) ) 
 
 * **Tree_colection.RData** : Collection of 276 *rpart* decision trees.
 * **Validation_datasets.RData**: list of four validation datasets:
